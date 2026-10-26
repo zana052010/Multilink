@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zaNna</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0B0813;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── video background ── */
+    .bg-video {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bg-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    /* dark overlay on top of video */
+    .bg-video::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(11,8,19,0.4) 0%, rgba(11,8,19,0.85) 100%);
+    }
+
+    /* ── card ── */
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 320px;
+      padding: 2.5rem 2rem;
+      border: 1px solid #2E2347;
+      border-radius: 16px;
+      background: rgba(17, 14, 26, 0.80);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow:
+        0 0 60px rgba(124, 58, 237, 0.10),
+        0 8px 32px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .nick {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #f0ecf9;
+      letter-spacing: 0.02em;
+    }
+
+    .handle {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #6b5f85;
+      letter-spacing: 0.03em;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border: 1px solid #2E2347;
+      border-radius: 10px;
+      background: rgba(124, 58, 237, 0.08);
+      color: #A78BFA;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s, border-color 0.25s;
+    }
+
+    .btn:hover {
+      background: rgba(124, 58, 237, 0.22);
+      border-color: #7C3AED;
+      transform: translateY(-2px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- video background -->
+  <div class="bg-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://v1.pinimg.com/videos/iht/expMp4/2c/31/61/2c31612eb2b0753d18753dcbb6bc5552_720w.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- main card -->
+  <div class="card">
+    <div class="nick">zaNna</div>
+    <span class="handle">@zana052010</span>
+    <div class="links">
+      <a class="btn" href="https://github.com/zana052010" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.63 7.63 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="https://t.me/zana05001" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M11.99 0C5.37 0 0 5.37 0 12s5.37 12 11.99 12S24 18.63 24 12 18.61 0 11.99 0zm5.9 7.54-2.2 10.39c-.17.74-.6.92-1.22.57l-3.37-2.48-1.63 1.56c-.18.18-.33.33-.68.33l.24-3.44 6.27-5.66c.27-.24-.06-.38-.42-.14l-7.74 4.88-3.34-1.04c-.72-.23-.74-.72.15-1.07l13.06-5.03c.6-.22 1.13.14.93 1.06z"/></svg>
+        Telegram
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
